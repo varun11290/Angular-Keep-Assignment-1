@@ -1,0 +1,43 @@
+
+.wrapper{
+  margin: 10px;
+}
+
+.notes{
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: beige;
+  margin-bottom: 20px;
+}
+.app-card {
+  padding: 0;
+}
+.cardheader{
+  padding-top: 15px;
+  background-color:#3f51b5;
+}
+.cardTitle {
+font-size: large;
+font: bold;
+color: white;
+}
+.cardContent {
+font-size: medium;
+padding-top: 15px;
+padding-left: 10px;
+padding-bottom: 15px;
+}
+
+.notesExpantion{
+  margin-top: 25px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+

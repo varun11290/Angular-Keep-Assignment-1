@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- HeaderComponent to be displayed as part of AppComponent -->
+<app-header></app-header>
+<div class="wrapper">
+  <!-- Label to display any error messages -->
+  <label>{{errMessage}}</label>
+  <!-- To add notes -->
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add Note
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput placeholder="Title">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Text"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="notesExpantion">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Notes
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="notes" *ngFor="let note of notesDataSource">
+          <mat-card class="app-card">
+            <mat-card-header class="cardheader">
+              <mat-card-title class="cardTitle">{{note.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="cardContent">
+              <p>
+                {{note.text}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+
+
+<!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
