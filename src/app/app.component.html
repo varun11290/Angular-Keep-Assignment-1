@@ -7,26 +7,30 @@
   <!-- To add notes -->
   <div>
     <mat-accordion>
-      <mat-expansion-panel>
+      <mat-expansion-panel (opened) ="isOpen">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Add Note
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div class="form-container">
-          <mat-form-field>
-            <input matInput placeholder="Title">
-          </mat-form-field>
-          <mat-form-field>
-            <textarea matInput placeholder="Text"></textarea>
-          </mat-form-field>
-        </div>
+        <form (ngSubmit)="onSubmit(noteForm.value)" #noteForm="ngForm">
+
+          <div class="form-container">
+            <mat-form-field>
+              <input name="title" matInput placeholder="Title" ngModel >
+            </mat-form-field>
+            <mat-form-field>
+              <textarea  name="text" matInput placeholder="Text" ngModel></textarea>
+            </mat-form-field>
+          </div>
+          <button mat-button type="submit">Add</button>
+        </form>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
   <div class="notesExpantion">
     <mat-accordion>
-      <mat-expansion-panel>
+      <mat-expansion-panel (opened) ="!isOpen">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Notes
